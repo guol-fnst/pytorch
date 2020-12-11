@@ -1558,7 +1558,8 @@ class TestUnaryUfuncs(TestCase):
 
         a.sign_()
         self.assertEqual(a, a_target, msg='sign_ device={} dtype={}'.format(device, dtype))
-
+        
+        # test for bfloat16
         if dtype == torch.bfloat16:
             a = torch.rand(5, 8, device=device)
             b = a.to(torch.bfloat16)
